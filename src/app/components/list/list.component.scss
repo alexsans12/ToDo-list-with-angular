@@ -1,0 +1,20 @@
+.container-list {
+	background-color: hsl(60, 100%, 99%);
+	box-shadow: 0 20px 30px hsla(0,0%,0%, 0.1);
+	min-width: 300px;
+	margin-top: 2rem;
+	border-radius: 5px;
+	max-width: 450px;
+
+	.list {
+		list-style: none;
+
+		li:nth-child(even) {
+			background-color: hsl(0, 0%, 75%);
+		}
+
+		li {
+			padding: 1rem 0;
+		}
+	}
+}

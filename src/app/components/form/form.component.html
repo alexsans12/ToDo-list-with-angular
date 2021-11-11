@@ -1,0 +1,12 @@
+<article class="form">
+	<h2 class="form__title">Add new task</h2>
+	<div class="input-group">
+		<input required [(ngModel)]="newTask.title" type="text" id="title" name="title" class="input-group__input">
+		<label for="title" class="input-group__label">Title</label>
+	</div>
+	<div class="input-group">
+		<textarea required [(ngModel)]="newTask.description" name="description" id="description" class="input-group__input input-group__input--textarea" cols="30" rows="10"></textarea>
+		<label for="description" class="input-group__label">Description</label>
+	</div>
+	<button (pointerenter)="submitTask()" class="form-btn" type="submit">Add Task</button>
+</article>
