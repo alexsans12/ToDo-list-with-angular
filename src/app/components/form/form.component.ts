@@ -19,7 +19,9 @@ export class FormComponent implements OnInit {
 	}
 
 	submitTask() {
-		this.createdTask.emit(this.newTask);
-		this.newTask = new Task();
+		if(this.newTask.title !== '' && this.newTask.description !== '') {
+			this.createdTask.emit(this.newTask);
+			this.newTask = new Task();
+		}
 	}
 }

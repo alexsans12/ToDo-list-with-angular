@@ -8,5 +8,5 @@
 		<textarea required [(ngModel)]="newTask.description" name="description" id="description" class="input-group__input input-group__input--textarea" cols="30" rows="10"></textarea>
 		<label for="description" class="input-group__label">Description</label>
 	</div>
-	<button (pointerenter)="submitTask()" class="form-btn" type="submit">Add Task</button>
+	<button (click)="submitTask()" class="form-btn" type="submit">Add Task</button>
 </article>

@@ -1,20 +1,113 @@
 .container-list {
 	background-color: hsl(60, 100%, 99%);
 	box-shadow: 0 20px 30px hsla(0,0%,0%, 0.1);
-	min-width: 300px;
-	margin-top: 2rem;
-	border-radius: 5px;
+	min-width: 325px;
 	max-width: 450px;
+	min-height: 300px;
+	max-height: 500px;
+	margin: 2rem 1rem;
+	padding: 1rem 2rem;
+	border-radius: 5px;
+
+	@media screen and (min-width: 800px) {
+		min-width: 400px;
+		min-height: 450px;
+		max-height: 700px;
+		margin: 0;
+	}
 
 	.list {
 		list-style: none;
+		padding: 0;
+		width: 100%;
+		height: 335px;
+		overflow: auto;
 
-		li:nth-child(even) {
-			background-color: hsl(0, 0%, 75%);
+		&__title {
+			font-size: 1.6rem;
+			color: hsl(219, 96%, 66%);
+
+			@media screen and (min-width: 800px) {
+				font-size: 2rem;
+			}
 		}
 
-		li {
-			padding: 1rem 0;
+		&__item:nth-child(odd) {
+			background-color: hsla(220, 85%, 74%, 0.08);
 		}
+
+		&__item {
+			margin: 0;
+			padding: 1rem;
+			width: 100%;
+			color: hsl(216, 42%, 15%);
+			border-bottom: 1px solid hsl(216,42%,15%);
+			max-width: 260px;
+
+			@media screen and (min-width: 800px) {
+				max-width: 100%;
+			}
+
+			&-group {
+				display: flex;
+				align-items: center;
+
+				.item-group__check {
+					margin-right: 15px;
+
+					&:checked ~ .item-group__title {
+						text-decoration-line: line-through;
+						color: hsla(216, 42%, 15%, 0.5);
+					}
+
+					&:checked ~ .item-group__delete {
+						display: block;
+					}
+
+					&:checked ~ .item-group__arrow {
+						display: none;
+					}
+				}
+
+				.item-group__title {
+					font-size: 1.2rem;
+					width: 100%;
+					cursor: pointer;
+				}
+
+				.item-group__delete {
+					display: none;
+					margin-right: 10px;
+					cursor: pointer;
+					transition: color 0.3s ease-in-out;
+
+					&:hover {
+						color: hsl(0, 100%, 70%);
+					}
+				}
+
+				.item-group__arrow {
+					margin-right: 10px;
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			&-description {
+				display: none;
+				margin: 1rem 0 0;
+				max-height: 100px;
+				max-width: 300px;
+				width: 100%;
+				overflow: auto;
+				word-wrap: break-word;
+				color: hsla(216, 42%, 15%, 0.75);
+
+				&--show {
+					display: block;
+				}
+			}
+		}
+
 	}
 }

@@ -2,15 +2,25 @@
 	background-color: hsl(60, 100%, 99%);
 	box-shadow: 0 20px 30px hsla(0,0%,0%, 0.1);
 	min-width: 300px;
-	padding: 1rem;
-	margin-top: 2rem;
-	border-radius: 5px;
 	max-width: 450px;
+	margin: 2rem 0 0;
+	padding: 1rem 2rem;
+	border-radius: 5px;
+
+	@media screen and (min-width: 800px) {
+		min-width: 400px;
+		padding: 2rem;
+		margin: 0 2rem 0 0;
+	}
 
 	&__title {
 		font-size: 1.6rem;
 		color: hsl(219, 96%, 66%);
 		margin-bottom: 1.5rem;
+
+		@media screen and (min-width: 800px) {
+			font-size: 2rem;
+		}
 	}
 
 	.input-group {
@@ -32,7 +42,8 @@
 			font-size: 1.1rem;
 			border: 2px solid hsla(220, 85%, 74%, 0.7);
 			border-radius: 5px;
-			color: hsl(220, 85%, 74%);
+			color: hsl(216, 42%, 15%);
+			padding-left: 0.5rem;
 
 			&:focus-visible {
 				outline: none;
@@ -47,6 +58,8 @@
 
 			&--textarea {
 				height: 150px;
+				resize: none;
+				padding-top: 0.5rem;
 			}
 		}
 

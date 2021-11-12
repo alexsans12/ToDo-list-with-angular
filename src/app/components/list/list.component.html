@@ -1,5 +1,15 @@
-<div class="container-list">
-	<ul class="list" [innerHTML]="showTasks()">
-		<li class="list__item">asdf</li>
+<article class="container-list">
+	<h2 class="list__title">Tasks</h2>
+	<ul class="list" *ngIf="tasksList.length > 0">
+		<li class="list__item" *ngFor="let task of tasksList; let index = index;">
+			<div class="list__item-group">
+				<input (click)="completeTask($event, task)" class="item-group__check" type="checkbox">
+				<label (click)="showDescription($event)" class="item-group__title">{{ task.title }}</label>
+				<fa-icon (click)="deleteTask(index)" class="item-group__delete" [icon]="faBackspace"></fa-icon>
+				<fa-icon class="item-group__arrow" [icon]="faChevronDown"></fa-icon>
+			</div>
+			<p class="list__item-description">{{task.description}}</p>
+		</li>
 	</ul>
-</div>
+	<p *ngIf="tasksList.length === 0">Parece que no tienes nada que hacer :D</p>
+</article>

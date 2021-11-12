@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {FormComponent} from './components/form/form.component';
 import {ListComponent} from './components/list/list.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
 	declarations: [
@@ -14,7 +15,8 @@ import {ListComponent} from './components/list/list.component';
 	],
 	imports: [
 		BrowserModule,
-		FormsModule
+		FormsModule,
+		FontAwesomeModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
