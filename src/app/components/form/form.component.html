@@ -1,4 +1,4 @@
-<article class="form">
+<form class="form">
 	<h2 class="form__title">Add new task</h2>
 	<div class="input-group">
 		<input required [(ngModel)]="newTask.title" type="text" id="title" name="title" class="input-group__input">
@@ -9,4 +9,4 @@
 		<label for="description" class="input-group__label">Description</label>
 	</div>
 	<button (click)="submitTask()" class="form-btn" type="submit">Add Task</button>
-</article>
+</form>
